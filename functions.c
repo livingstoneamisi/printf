@@ -1,6 +1,5 @@
 #include "main.h"
 
-<<<<<<< HEAD
 /**
  * c_printer - prints a character
  * @printer: argument list
