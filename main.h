@@ -1,14 +1,12 @@
 #ifndef MAIN_H
 #define MAIN_H
-
-#include <unistd.h>
 #include <stdarg.h>
-#include <string.h>
+#include <stdio.h>
+#include <unistd.h>
 
 #define BUFFERSIZE 1024
 
 int _printf(const char *format, ...);
-
 typedef struct format
 {
 	char *specifier;
