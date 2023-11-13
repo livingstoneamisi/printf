@@ -22,7 +22,6 @@ int c_printer(va_list printer)
 int s_printer(va_list printer)
 {
 	s = va_arg(printer, char *);
-	
 	if (s == NULL)
 	{
 		s = "(null)";

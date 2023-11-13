@@ -9,8 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list printer;
-	int printno = 0, c, x, y = 0;
-	char *s;
+	int printno = 0, x, y = 0;
 	char buffer[BUFFERSIZE];
 	int (*f)(va_list);
 
@@ -50,7 +49,7 @@ int _printf(const char *format, ...)
 			else
 			{
 				printno += f(printer);
-				y += printno;
+				y += 1;
 			}
 		}
 	}

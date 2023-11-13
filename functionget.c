@@ -14,7 +14,8 @@ int (*function_get(char *s))(va_list)
 		{"%", p_printer},
 		{NULL, NULL}
 	};
-	int = 0;
+	int i = 0;
+
 	while (formats[i].specifier != NULL)
 	{
 		if (strcmp(s, formats[i].specifier) == 0)
