@@ -9,12 +9,10 @@
 
 #define BUFFERSIZE 1024
 
-int _printf(const char *format, ...);
-
 /**
  * struct format - format structure
  * @specifier: format specifier
- * @f: pointer the associated function
+ * @f: function pointer
  */
 typedef struct format
 {
@@ -23,9 +21,10 @@ typedef struct format
 }
 format_t;
 
-int c_printer(va_list);
-int p_printer(va_list);
-int s_printer(va_list);
-int (*function_get(char *s))(va_list);
+int _printf(const char *format, ...);
+int c_printer(va_list printer);
+int p_printer(void);
+int s_printer(va_list printer);
+int (*function_get(const char *s))(va_list);
 
 #endif

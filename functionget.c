@@ -6,7 +6,7 @@
  *
  * Return: pointer to appropriate function
  */
-int (*function_get(char *s))(va_list)
+int (*function_get(const char *s))(va_list)
 {
 	format_t formats[] = {
 		{"c", c_printer},

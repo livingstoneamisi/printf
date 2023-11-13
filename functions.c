@@ -8,8 +8,8 @@
  */
 int c_printer(va_list printer)
 {
-	c = va_arg(printer, int);
-	buffer[y] = c;
+	char c = va_arg(printer, int);
+	write(1, &c, 1);
 	return (1);
 }
 
@@ -21,17 +21,18 @@ int c_printer(va_list printer)
  */
 int s_printer(va_list printer)
 {
-	s = va_arg(printer, char *);
+	char *s = va_arg(printer, char *);
+	int printno;
+
 	if (s == NULL)
 	{
 		s = "(null)";
 	}
 	while (*s != '\0')
 	{
-		buffer[y] = *s;
-		printno++;
-		y++;
+		write(1, s, 1);
 		s++;
+		printno++;
 	}
 	return (printno);
 }
@@ -42,8 +43,8 @@ int s_printer(va_list printer)
  *
  * Return: number of characters printed
  */
-int p_printer(va_list printer)
+int p_printer(void)
 {
-	buffer[y] = '%';
+	write(1, "%", 1);
 	return (1);
 }
