@@ -12,7 +12,8 @@ int (*function_get(const char *s))(va_list)
 		{"c", c_printer},
 		{"s", s_printer},
 		{"%", p_printer},
-		{NULL, NULL}
+		{"i", i_printer},
+		{"d", d_printer}
 	};
 	int i = 0;
 

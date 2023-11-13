@@ -50,3 +50,59 @@ int p_printer(va_list printer)
 	write(1, "%", 1);
 	return (1);
 }
+
+/**
+ * i_printer - prints an integer
+ * @printer: argument list
+ *
+ * Return: number of characters printed
+ */
+int i_printer(va_list printer)
+{
+	int a = va_arg(printer, int);
+	int b = count_digit(a);
+	int num = 0, tmp = a;
+	char c;
+
+	if (a < 0)
+	{
+		num += write_char('-');
+		tmp = -tmp;
+	}
+	while (b > 0)
+	{
+		c = (tmp / power(10, b - 1) + '0');
+		num += write_char(c);
+		tmp %= power(10, b - 1);
+		b--;
+	}
+	return (num);
+}
+
+/**
+ * d_printer - prints an integer
+ * @printer: argument list
+ *
+ * Return: number of characters printed
+ */
+int d_printer(va_list printer)
+{
+	int a = va_arg(printer, int);
+	int b = count_digit(a);
+	int num = 0, tmp = a;
+	char c;
+
+	if (a < 0)
+	{
+		num += write_char('-');
+		tmp = -tmp;
+	}
+	while (b > 0)
+	{
+		c = (tmp / power(10, b - 1) + '0');
+		num += write_char(c);
+		tmp %= power(10, b - 1);
+		b--;
+	}
+	return (num);
+}
