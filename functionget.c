@@ -12,13 +12,15 @@ int (*function_get(const char *s))(va_list)
 		{"c", c_printer},
 		{"s", s_printer},
 		{"%", p_printer},
+		{"d", d_printer},
+		{"i", i_printer},
 		{NULL, NULL}
 	};
 	int i = 0;
 
 	while (formats[i].specifier != NULL)
 	{
-		if (strcmp(s, formats[i].specifier) == 0)
+		if (*s == *formats[i].specifier)
 		{
 			return (formats[i].f);
 		}

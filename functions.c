@@ -9,6 +9,7 @@
 int c_printer(va_list printer)
 {
 	char c = va_arg(printer, int);
+
 	write(1, &c, 1);
 	return (1);
 }
@@ -39,11 +40,11 @@ int s_printer(va_list printer)
 
 /**
  * p_printer - prints the % symbol
- * @printer: argument list
+ * @unused: argument
  *
  * Return: number of characters printed
  */
-int p_printer(void)
+int p_printer(va_list unused)
 {
 	write(1, "%", 1);
 	return (1);
