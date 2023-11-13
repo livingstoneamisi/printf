@@ -40,12 +40,13 @@ int s_printer(va_list printer)
 
 /**
  * p_printer - prints the % symbol
- * @unused: argument
+ * @printer: argument
  *
  * Return: number of characters printed
  */
-int p_printer(va_list unused)
+int p_printer(va_list printer)
 {
+	(void)printer;
 	write(1, "%", 1);
 	return (1);
 }

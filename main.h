@@ -21,7 +21,7 @@ format_t;
 
 int _printf(const char *format, ...);
 int c_printer(va_list printer);
-int p_printer(va_list unused);
+int p_printer(va_list printer);
 int s_printer(va_list printer);
 int (*function_get(const char *s))(va_list);
 
