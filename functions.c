@@ -105,4 +105,4 @@ int d_printer(va_list printer)
 		b--;
 	}
 	return (num);
-}	
+}
