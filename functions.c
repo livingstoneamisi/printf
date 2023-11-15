@@ -56,40 +56,23 @@ int p_printer(va_list printer)
 int i_printer(va_list printer)
 {
 	int a = va_arg(printer, int);
-	int b = a, l = a % 10, d, i = 1, ex = 1;
+	int b = count_digit(a);
+	int num = 0, tmp = a;
+	char c;
 
-	a = a / 10;
-	b = a;
-
-	if (l < 0)
+	if (a < 0)
 	{
-		write(1, "-", 1);
-		b = -b;
-		a = -a;
-		l = -l;
-		i++;
+		num += write_char('-');
+		tmp = -tmp;
 	}
-	if (b > 0)
+	while (b > 0)
 	{
-		while (b / 10 != 0)
-		{
-			ex = ex * 10;
-			b = b / 10;
-		}
-		b = a;
-		while (ex > 0)
-		{
-			d = b / ex;
-			d = d + '0';
-			write(1, &d, 1);
-			b = b - (d * ex);
-			ex = ex / 10;
-			i++;
-		}
+		c = (tmp / power(10, b - 1) + '0');
+		num += write_char(c);
+		tmp %= power(10, b - 1);
+		b--;
 	}
-	l = l + '0';
-	write(1, &l, 1);
-	return (i);
+	return (num);
 }
 /**
  * d_printer - prints an integer
@@ -100,38 +83,21 @@ int i_printer(va_list printer)
 int d_printer(va_list printer)
 {
 	int a = va_arg(printer, int);
-	int b = a, l = a % 10, d, i = 1, ex = 1;
+	int b = count_digit(a);
+	int num = 0, tmp = a;
+	char c;
 
-	a = a / 10;
-	b = a;
-
-	if (l < 0)
+	if (a < 0)
 	{
-		write(1, "-", 1);
-		b = -b;
-		a = -a;
-		l = -l;
-		i++;
+		num += write_char('-');
+		tmp = -tmp;
 	}
-	if (b > 0)
+	while (b > 0)
 	{
-		while (b / 10 != 0)
-		{
-			ex = ex * 10;
-			b = b / 10;
-		}
-		b = a;
-		while (ex > 0)
-		{
-			d = b / ex;
-			d = d + '0';
-			write(1, &d, 1);
-			b = b - (d * ex);
-			ex = ex / 10;
-			i++;
-		}
+		c = (tmp / power(10, b - 1) + '0');
+		num += write_char(c);
+		tmp %= power(10, b - 1);
+		b--;
 	}
-	l = l + '0';
-	write(1, &l, 1);
-	return (i);
+	return (num);
 }
