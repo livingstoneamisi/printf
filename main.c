@@ -9,23 +9,11 @@
  */
 int main(void)
 {
-	int len;
-	int len2;
+	printf("Test 3: %d\n", _printf("This is a %% test with %s and %d.\n", "format specifiers", 123));
+	printf("Test 4: %d\n", _printf("%%Consecutive %% percent %%%% signs.\n"));
+	printf("Test 5: %d\n", _printf("Invalid specifier at the end: %z\n"));
+	printf("Test 7: %d\n", _printf("Mixing text with %s, %c, and %i.\n", "format specifiers", 'X', 987));
+	printf("Test 8: %d\n", _printf("Special characters: %c, %s\n", '$', "@#&*!"));
 
-	len = _printf("Let's try to printf a simple sentence.\n");
-	len2 = printf("Let's try to printf a simple sentence.\n");
-	_printf("Length:[%d, %i]\n", len, len);
-	printf("Length:[%d, %i]\n", len2, len2);
-	_printf("Negative:[%d]\n", -762534);
-	printf("Negative:[%d]\n", -762534);
-	_printf("Character:[%c]\n", 'H');
-	printf("Character:[%c]\n", 'H');
-	_printf("String:[%s]\n", "I am a string !");
-	printf("String:[%s]\n", "I am a string !");
-	len = _printf("Percent:[%%]\n");
-	len2 = printf("Percent:[%%]\n");
-	_printf("Len:[%d]\n", len);
-	printf("Len:[%d]\n", len2);
-	_printf("Unknown:[%r]\n");
 	return (0);
 }

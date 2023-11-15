@@ -1,4 +1,5 @@
 #include "main.h"
+#include <ctype.h>
 
 /**
  * _printf - produces output according to a formet
@@ -12,7 +13,7 @@ int _printf(const char *format, ...)
 	int printno = 0, x = 0;
 	int (*f)(va_list);
 
-	if (format == NULL || format[0] == '\0')
+	if (format == NULL || format[0] == '\0' || (format[0] == '%' && format[1] == '\0'))
 	{
 		return (-1);
 	}
