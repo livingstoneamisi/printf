@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 			else
 			{
 				write(1, "%", 1);
-				write(1, &format[x], 1;
+				write(1, &format[x], 1);
 				printno += 1;
 			}
 		}
