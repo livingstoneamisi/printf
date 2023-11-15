@@ -80,7 +80,7 @@ int i_printer(va_list printer)
 		while (ex > 0)
 		{
 			d = b / ex;
-			d = b + '0';
+			d = d + '0';
 			write(1, &d, 1);
 			b = b - (d * ex);
 			ex = ex / 10;
