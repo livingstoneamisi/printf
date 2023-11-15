@@ -103,7 +103,7 @@ int d_printer(va_list printer)
 	int b = a, l = a % 10, d, i = 1, ex = 1;
 
 	a = a / 10;
-	b = a'
+	b = a;
 
 	if (l < 0)
 	{
