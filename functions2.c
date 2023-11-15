@@ -20,12 +20,8 @@ int write_char(char c)
  */
 int count_digit(int i)
 {
-	unsigned int d = 0, u;
+	unsigned int d = 0, u = (i < 0) ? -i : i;
 
-	if (i < 0)
-		u = (unsigned int)(i * -1);
-	else
-		u = (unsigned int)i;
 	while (u != 0)
 	{
 		u /= 10;
