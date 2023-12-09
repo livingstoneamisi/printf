@@ -29,12 +29,8 @@ int s_printer(va_list printer)
 	{
 		s = "(null)";
 	}
-	while (*s != '\0')
-	{
-		write(1, s, 1);
-		s++;
-		printno++;
-	}
+	write(1, s, strlen(s));
+	printno = strlen(s);
 	return (printno);
 }
 
@@ -78,7 +74,6 @@ int i_printer(va_list printer)
 	}
 	return (num);
 }
-
 /**
  * d_printer - prints an integer
  * @printer: argument list
